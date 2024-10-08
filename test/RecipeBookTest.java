@@ -18,4 +18,16 @@ class RecipeBookTest {
         recipeBook.addRecipe(pancakes);
         assertEquals(1, recipeBook.getAllRecipes().size());
     }
+
+
+    //TODO Add more tests DONE
+
+    @Test
+    public void testViewRecipe() {
+        Recipe pancakes = new Recipie("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
+        recipeBook.addRecipe(pancakes);
+        Recipe viewRecipe = recipeBook.getRecipe("Pancakes");
+        assertNotNull(viewRecipe);
+        assertEquals("Pancakes", viewRecipe.getTitle());
+    }
 }
