@@ -32,5 +32,16 @@ class RecipeBookTest {
     }
 
 
-    //TODO Add another test...
+    //TODO Add another test DONE!
+
+
+
+    @Test
+    public void testRemoveRecipe() {
+        Recipe pancakes = new Recipie("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
+        recipeBook.addRecipe(pancakes);
+        recipeBook.removeRecipe(pancakes);
+        assertEquals(0, recipeBook.getAllRecipies().size());
+
+    }
 }
