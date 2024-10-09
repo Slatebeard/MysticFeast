@@ -1,66 +1,30 @@
-package test;
-
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 
-public class RecipeBookTest {
-    private List<RecipeTest> recipes;
-    private RecipeBookTest recipeBookTest;
+@Test
+void testAddRecipe() {
+    Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+    RecipeBook.addRecipe(pancakes);
+    assertEquals(1, recipeBook.getAllRecipes().size());
+}
 
 
-    public RecipeBookTest() {
-        this.recipes = new ArrayList<>();
-    }
+@Test
+void testViewRecipe() {
+    Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+    recipes.add(pancakes);
+    Recipe viewRecipe = recipes.get("Pancakes");
+    assertNotNull(viewRecipe);
+    assertEquals("Pancakes", viewRecipe.getTitle());
+}
 
-    public void addRecipe(RecipeTest recipe) {
-        recipes.add(recipe);
-    }
+@Test
+void testRemoveRecipe() {
+    Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+    recipeBook.addRecipe(pancakes);
+    recipeBook.removeRecipe(pancakes);
+    assertEquals(0, recipeBook.getAllRecipies().size());
 
-    public List<RecipeTest> getAllRecipes() {
-        return recipes;
-    }
-
-
-
-    //TODO Try a @BeforeEach ????
-
-
-    //TODO Creat the functionality in the recipeBook class
-    @Test
-    public void testAddRecipe() {
-        RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs");
-        RecipeBookTest.addRecipe(pancakes);
-        assertEquals(1, recipeBookTest.getAllRecipes().size());
-    }
-
-
-    //TODO Add more tests DONE!
-
-    @Test
-    public void testViewRecipe() {
-        RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
-        recipes.add(pancakes);
-        RecipeTest viewRecipe = recipes.get("Pancakes");
-        assertNotNull(viewRecipe);
-        assertEquals("Pancakes", viewRecipe.getTitle());
-    }
-
-
-
-    //TODO Add another test DONE!
-
-
-
-    @Test
-    public void testRemoveRecipe() {
-        RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
-        recipeBookTest.addRecipe(pancakes);
-        recipeBookTest.removeRecipe(pancakes);
-        assertEquals(0, recipeBookTest.getAllRecipies().size());
-
-    }
 }
