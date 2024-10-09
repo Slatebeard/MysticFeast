@@ -9,7 +9,7 @@ public class RecipeBookTest {
     void testAddRecipe() {
         RecipeBook recipeBook = new RecipeBook();
         Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
-        RecipeBook.addRecipe(pancakes);
+        recipeBook.addRecipe(pancakes);
         assertEquals(1, recipeBook.getAllRecipes().size());
     }
 
@@ -18,11 +18,12 @@ public class RecipeBookTest {
     void testViewRecipe() {
         RecipeBook recipeBook = new RecipeBook();
         Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
-        recipes.add(pancakes);
-        Recipe viewRecipe = recipes.get("Pancakes");
+        recipeBook.addRecipe(pancakes);
+        Recipe viewRecipe = recipeBook.getRecipeByName("Pancakes");
         assertNotNull(viewRecipe);
         assertEquals("Pancakes", viewRecipe.getTitle());
     }
+
 
     @Test
     void testRemoveRecipe() {
@@ -30,7 +31,6 @@ public class RecipeBookTest {
         Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
         recipeBook.addRecipe(pancakes);
         recipeBook.removeRecipe(pancakes);
-        assertEquals(0, recipeBook.getAllRecipes().size());
-
+        assertEquals(0, recipeBook.getAllRecipes().size()); // Fixed typo
     }
 }
