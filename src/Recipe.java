@@ -30,9 +30,6 @@ public class Recipe {
         this.instructions = instructions;
     }
 
-
-
-
     // RECIPE
     public Recipe(String title, String ingredients, String instructions) {
         this.title = title;

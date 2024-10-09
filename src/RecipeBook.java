@@ -22,7 +22,7 @@ public class RecipeBook {
         recipes.remove(recipe);
     }
 
-    public Recipe getRecipeByName(String name) {
+    public Recipe getRecipeByName(String title) {
         for (Recipe recipe : recipes) {
             if (recipe.getTitle().equals(title)) {
                 return recipe;

@@ -30,7 +30,7 @@ public class RecipeBookTest {
         Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
         recipeBook.addRecipe(pancakes);
         recipeBook.removeRecipe(pancakes);
-        assertEquals(0, recipeBook.getAllRecipies().size());
+        assertEquals(0, recipeBook.getAllRecipes().size());
 
     }
 }
