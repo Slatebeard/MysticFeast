@@ -7,7 +7,23 @@ import java.util.List;
 
 
 
-class RecipeBookTest {
+public class RecipeBookTest {
+    private List<RecipeTest> recipes;
+
+
+
+    public RecipeBookTest() {
+        this.recipes = new ArrayList<>();
+    }
+
+
+    public RecipeBookTest() {
+        
+        
+    }
+
+
+
 
 
 
@@ -37,16 +53,17 @@ class RecipeBookTest {
     }
 
 
-    //TODO Add more tests DONE
+    //TODO Add more tests DONE!
 
     @Test
     public void testViewRecipe() {
         RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
-        recipeBookTest.addRecipe(pancakes);
-        RecipeTest viewRecipe = recipeBookTest.getRecipe("Pancakes");
+        recipes.addRecipe(pancakes);
+        RecipeTest viewRecipe = recipes.getRecipe("Pancakes");
         assertNotNull(viewRecipe);
         assertEquals("Pancakes", viewRecipe.getTitle());
     }
+
 
 
     //TODO Add another test DONE!
