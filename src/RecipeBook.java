@@ -6,9 +6,6 @@ public class RecipeBook {
     private List<Recipe> recipes;
 
 
-    private RecipeBook recipeBook;
-
-
     public RecipeBook() {
         this.recipes = new ArrayList<>();
     }
@@ -19,5 +16,18 @@ public class RecipeBook {
 
     public List<Recipe> getAllRecipes() {
         return recipes;
+    }
+
+    public void removeRecipe(Recipe recipe) {
+        recipes.remove(recipe);
+    }
+
+    public Recipe getRecipeByName(String name) {
+        for (Recipe recipe : recipes) {
+            if (recipe.getTitle().equals(title)) {
+                return recipe;
+            }
+        }
+        return null;
     }
 }
