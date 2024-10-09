@@ -9,46 +9,31 @@ import java.util.List;
 
 public class RecipeBookTest {
     private List<RecipeTest> recipes;
-
+    private RecipeBookTest recipeBookTest;
 
 
     public RecipeBookTest() {
         this.recipes = new ArrayList<>();
     }
 
+    public void addRecipe(RecipeTest recipe) {
+        recipes.add(recipe);
+    }
 
-    public RecipeBookTest() {
-        
-        
+    public List<RecipeTest> getAllRecipes() {
+        return recipes;
     }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //TODO Try a @BeforeEach ????
 
 
     //TODO Creat the functionality in the recipeBook class
     @Test
     public void testAddRecipe() {
-        RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
-        recipeBookTest.addRecipe(pancakes);
+        RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs");
+        RecipeBookTest.addRecipe(pancakes);
         assertEquals(1, recipeBookTest.getAllRecipes().size());
     }
 
@@ -58,8 +43,8 @@ public class RecipeBookTest {
     @Test
     public void testViewRecipe() {
         RecipeTest pancakes = new RecipeTest("Pancakes", "Flour", "Eggs", "Milk", "Mix ingredients and cook.");
-        recipes.addRecipe(pancakes);
-        RecipeTest viewRecipe = recipes.getRecipe("Pancakes");
+        recipes.add(pancakes);
+        RecipeTest viewRecipe = recipes.get("Pancakes");
         assertNotNull(viewRecipe);
         assertEquals("Pancakes", viewRecipe.getTitle());
     }
