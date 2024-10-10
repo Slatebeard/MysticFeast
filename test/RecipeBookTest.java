@@ -1,11 +1,11 @@
-package test;
-
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 
 public class RecipeBookTest {
+
+
     @Test
     void testAddRecipe() {
         RecipeBook recipeBook = new RecipeBook();
