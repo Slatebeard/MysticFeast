@@ -13,7 +13,7 @@ public class MainMenu {
         runMenu();
     }
 
-    public void runMenu() {
+    protected void runMenu() {
         // Variables
         boolean running = true;
 
@@ -29,10 +29,12 @@ public class MainMenu {
             Art.intro();
             Art.menu1();
 
+            sc.nextInt();
+
             //TODO Figure out a smart way to check for valid input
 
             // Error Handling
-            List<Integer> menuOptions = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
+            List<Integer> menuOptions = new ArrayList<>(List.of(1, 2, 3, 4));
             if (menuOptions.contains(userChoice)) {
                 menuChoise = userChoice;
             } else {

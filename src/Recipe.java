@@ -1,6 +1,7 @@
 public class Recipe {
     private String title;
     private String ingredients;
+    private String ingredients2;
     private String instructions;
 
 
@@ -34,6 +35,7 @@ public class Recipe {
     public Recipe(String title, String ingredients, String instructions) {
         this.title = title;
         this.ingredients = ingredients;
+        this.ingredients2 = instructions;
         this.instructions = instructions;
     }
 }

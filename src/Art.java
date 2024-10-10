@@ -14,12 +14,16 @@ public class Art {
                * The tavern keep will show you a list of all recipes, new and old...
             3. Remove a recipe.
                * Based on feedback the tavern keep will throw a bad recipe into the fire...
+            4. Exit the tavern.
+               * Venture out into the rain once more...
+            
             """;
 
 
     public static void intro() {
         System.out.println(intro);
     }
+
     public static void menu1() {
         System.out.println(menu1);
     }
