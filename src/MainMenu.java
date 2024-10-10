@@ -1,5 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainMenu {
@@ -14,8 +16,10 @@ public class MainMenu {
     public void runMenu() {
         // Variables
         boolean running = true;
-        boolean isPresent = false;
+
+        int menuChoise = 0;
         int userChoice = sc.nextInt();
+
 
         // Objects
         RecipeBook recipeBook = new RecipeBook();
@@ -28,9 +32,13 @@ public class MainMenu {
             //TODO Figure out a smart way to check for valid input
 
             // Error Handling
-            int[] validChoices =  {1, 2, 3, 4, 5, 6, 7, 8, 9};
-            if (userChoice == ){
+            List<Integer> menuOptions = new ArrayList<>(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
+            if (menuOptions.contains(userChoice)) {
+                menuChoise = userChoice;
+            } else {
+                System.out.println("Please select a valid option...");
             }
+
 
 
             switch (userChoice) {
@@ -41,7 +49,6 @@ public class MainMenu {
                 case 2: {
                     System.out.println(Art.addRecipe);
                     recipeBook.addRecipe();
-
                 }
 
 
