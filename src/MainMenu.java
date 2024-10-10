@@ -26,8 +26,8 @@ public class MainMenu {
 
         while (running) {
             QOL.clearConsole();
-            System.out.println(Art.intro);
-
+            Art.intro();
+            Art.menu1();
 
             //TODO Figure out a smart way to check for valid input
 
@@ -40,15 +40,19 @@ public class MainMenu {
             }
 
 
-
             switch (userChoice) {
                 case 1: {
-                    System.out.println(Art.getAllRecipes);
-                    recipeBook.getAllRecipes();
+                    new SubMenuAdd();
                 }
                 case 2: {
-                    System.out.println(Art.addRecipe);
-                    recipeBook.addRecipe();
+                    new SubMenuShowAll();
+                }
+                case 3: {
+                    new SubMenuRemove();
+                }
+                case 4: {
+                    System.out.println();
+                    running = false;
                 }
 
 
