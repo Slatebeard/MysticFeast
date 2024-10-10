@@ -2,9 +2,16 @@ public class Art {
 
 
     static String intro = """
-                                Welcome to the tavern!
+                        \033[0;32m                                  Welcome To The     \033[0m
             
-            Find a seat near the hearth and get ready to order...
+                                    ▗▖  ▗▖▄   ▄  ▄▄▄  ■  ▄ ▗▞▀▘    ▗▄▄▄▖▗▞▀▚▖▗▞▀▜▌ ▄▄▄  ■ \s
+                                    ▐▛▚▞▜▌█   █ ▀▄▄▗▄▟▙▄▖▄ ▝▚▄▖    ▐▌   ▐▛▀▀▘▝▚▄▟▌▀▄▄▗▄▟▙▄▖
+                                    ▐▌  ▐▌ ▀▀▀█ ▄▄▄▀ ▐▌  █         ▐▛▀▀▘▝▚▄▄▖     ▄▄▄▀ ▐▌ \s
+                                    ▐▌  ▐▌▄   █      ▐▌  █         ▐▌                  ▐▌ \s
+                                           ▀▀▀       ▐▌                                ▐▌ \s
+            
+            
+                          \033[0;32m         Find a seat near the hearth and get ready to order... \033[0m
             """;
 
     static String menu1 = """
@@ -16,7 +23,6 @@ public class Art {
                * Based on feedback the tavern keep will throw a bad recipe into the fire...
             4. Exit the tavern.
                * Venture out into the rain once more...
-            
             """;
 
 
