@@ -1,6 +1,6 @@
 public class Art {
 
-    // Art
+    // Art //
     static String logo = """
                         \033[0;32m                                  Welcome To The     \033[0m
             
@@ -15,9 +15,10 @@ public class Art {
             """;
 
     static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
+    static String placer = ">";
 
 
-    // Text
+    // Text //
     static String menu1 = """
             1. Add a new recipe.
                * The tavern keep will open his dusty old cookbook and you together will come up a new recipe...
@@ -29,6 +30,7 @@ public class Art {
                * Say your goodbyes and venture out into the rain once more...
             """;
 
+
     static String subMenuAdd = """
             1. Come up with a new recipe.
                * Choose from a list of building blocks to create a new type of food...
@@ -38,9 +40,18 @@ public class Art {
                * Go back to the main menu...
             """;
 
-    static String getSubMenuAdd2 = """
+    static String subMenuAdd2 = """
                                                Welcome to the recipe builder!
-            
+            Choose from a type of recipe you'd like to create.
+            1. Breakfast.
+            2. Lunch.
+            3. Supper.
+            4. Snack.
+            5. Exit.
+               * Return to the main menu.
+            """;
+
+    static String subMenuAdd3 = """
             
             """;
 
@@ -60,6 +71,14 @@ public class Art {
 
     public static void subMenuAdd() {
         System.out.println(subMenuAdd);
+    }
+
+    public static void subMenuAdd2() {
+        System.out.println(subMenuAdd2);
+    }
+
+    public static void placer() {
+        System.out.print(placer);
     }
 }
 

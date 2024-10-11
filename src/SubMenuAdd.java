@@ -36,7 +36,7 @@ public class SubMenuAdd  {
                 errorFlag = false;
             }
             try {
-                System.out.print(">");
+                Art.placer();
                 menuChoice = sc.nextInt();
 
                 switch (menuChoice) {
@@ -59,16 +59,72 @@ public class SubMenuAdd  {
     }
 
     private void recipeGenerator() {
-        // Variables
+        // Variables //
 
+        //Flag
         boolean generating = true;
+        boolean errorFlag = false;
+
+            // Recipe Type
+        boolean breakfast = false;
+        boolean lunch = false;
+        boolean supper = false;
+        boolean snack = false;
+
+
+        // Int
+        int menuChoice;
+        int choice;
+
+        // String
 
 
 
-
+        // Logic
         while (generating) {
             QOL.clearConsole();
             Art.logo();
+            Art.subMenuAdd2();
+
+
+            if (errorFlag) {
+                System.out.println("You have entered something wrong... Try again please.");
+            } else {
+                errorFlag = false;
+            }
+            try {
+                Art.placer();
+                menuChoice = sc.nextInt();
+
+                switch (menuChoice) {
+                    case 1: {
+                        breakfast = true;
+                    }
+                    case 2: {
+                        lunch = true;
+                    }
+                    case 3: {
+                        supper = true;
+                    }
+                    case 4: {
+                        snack = true;
+                    }
+                    case 5: {
+                        System.out.println();
+                        generating = false;
+                    }
+                }
+            } catch (Exception e) {
+                errorFlag = true;
+                sc.nextLine();
+            }
+
+            if
+
+
+
+
+
 
 
 
