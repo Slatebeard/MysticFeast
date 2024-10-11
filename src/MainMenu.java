@@ -27,9 +27,8 @@ public class MainMenu {
             Art.logo();
             Art.menu1();
 
-            if (errorFlag == true) {
-                System.out.println("You have entered something wrong... Try again please.");
-            } else {
+            if (errorFlag) {
+                System.out.println("You have entered something wrong... Try again.");
                 errorFlag = false;
             }
 
@@ -41,16 +40,24 @@ public class MainMenu {
                 switch (menuChoice) {
                     case 1: {
                         new SubMenuAdd();
+                        break;
                     }
                     case 2: {
                         new SubMenuShowAll();
+                        break;
                     }
                     case 3: {
                         new SubMenuRemove();
+                        break;
                     }
                     case 4: {
-                        System.out.println();
+                        System.out.println("Safe travels friend! Hope to see you again...");
                         running = false;
+                        break;
+                    }
+                    default: {
+//                        System.out.println("You have entered something wrong... Try again.");
+                        errorFlag = true;
                     }
                 }
             } catch (Exception e) {
