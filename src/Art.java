@@ -42,6 +42,7 @@ public class Art {
 
     static String subMenuAdd2 = """
                                                Welcome to the recipe builder!
+                                               
             Choose from a type of recipe you'd like to create.
             1. Breakfast.
             2. Lunch.
@@ -50,6 +51,8 @@ public class Art {
             5. Exit.
                * Return to the main menu.
             """;
+
+
 
     static String subMenuAdd3 = """
             
@@ -79,6 +82,14 @@ public class Art {
 
     public static void placer() {
         System.out.print(placer);
+    }
+
+
+
+    // Other Methods
+    public static void menuRefresh() {
+        QOL.clearConsole();
+        Art.logo();
     }
 }
 

@@ -47,7 +47,6 @@ public class SubMenuAdd  {
                        recipeInput();
                     }
                     case 3: {
-                        System.out.println();
                         running = false;
                     }
                 }
@@ -65,18 +64,13 @@ public class SubMenuAdd  {
         boolean generating = true;
         boolean errorFlag = false;
 
-            // Recipe Type
-        boolean breakfast = false;
-        boolean lunch = false;
-        boolean supper = false;
-        boolean snack = false;
-
 
         // Int
         int menuChoice;
         int choice;
 
         // String
+        String recipeType = "";
 
 
 
@@ -98,20 +92,25 @@ public class SubMenuAdd  {
 
                 switch (menuChoice) {
                     case 1: {
-                        breakfast = true;
+                        recipeType = "Breakfast";
+                        break;
                     }
                     case 2: {
-                        lunch = true;
+                        recipeType = "Lunch";
+                        break;
                     }
                     case 3: {
-                        supper = true;
+                        recipeType = "Supper";
+                        break;
                     }
                     case 4: {
-                        snack = true;
+                        recipeType = "Snack";
+                        break;
                     }
                     case 5: {
-                        System.out.println();
                         generating = false;
+                        break;
+
                     }
                 }
             } catch (Exception e) {
@@ -119,7 +118,11 @@ public class SubMenuAdd  {
                 sc.nextLine();
             }
 
-            if
+            if (!recipeType.isEmpty()) {
+                Art.menuRefresh();
+
+                System.out.println("Enter a title for your new " + recipeType + ": " );
+                String title = sc.nextLine();
 
 
 
@@ -132,14 +135,19 @@ public class SubMenuAdd  {
 
 
 
-
-
-
+            }
         }
-
     }
 
     private void recipeInput() {
 
     }
+
+
+
+
+
+    //TODO use this later for creating custom recipe
+//    System.out.println("Enter the ingredients for your new " + recipeType + ": " );
+//    String[] ingredients = sc.nextLine().split(", ");
 }
