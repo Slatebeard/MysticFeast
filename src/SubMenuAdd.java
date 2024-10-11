@@ -62,6 +62,7 @@ public class SubMenuAdd  {
 
         //Flag
         boolean generating = true;
+
         boolean errorFlag = false;
 
 
@@ -135,6 +136,9 @@ public class SubMenuAdd  {
                 recipeBook.addRecipe(recipe);
 
                 System.out.println(recipe + " was recorded in the tome!");
+
+
+                //TODO something here is wrong i need to fix the instance of RecipeBook in MainMenu
 
             }
         }
