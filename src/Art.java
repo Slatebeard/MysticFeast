@@ -1,7 +1,7 @@
 public class Art {
 
-
-    static String intro = """
+    // Art
+    static String logo = """
                         \033[0;32m                                  Welcome To The     \033[0m
             
                                     ▗▖  ▗▖▄   ▄  ▄▄▄  ■  ▄ ▗▞▀▘    ▗▄▄▄▖▗▞▀▚▖▗▞▀▜▌ ▄▄▄  ■ \s
@@ -14,22 +14,34 @@ public class Art {
                           \033[0;32m         Find a seat near the hearth and get ready to order... \033[0m
             """;
 
+    static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
+
+
+    // Text
     static String menu1 = """
-            1. Create a new recipe.
-               * The tavern keep will come up with a recipe based on your input!
+            1. Add a new recipe.
+               * The tavern keep will open his dusty old cookbook and you together will come up a new recipe...
             2. Show all recipes.
                * The tavern keep will show you a list of all recipes, new and old...
             3. Remove a recipe.
                * Based on feedback the tavern keep will throw a bad recipe into the fire...
             4. Exit the tavern.
-               * Venture out into the rain once more...
+               * Say your goodbyes and venture out into the rain once more...
             """;
 
-    static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
+    static String subMenuAdd = """
+            1. Come up with a new recipe.
+               * Choose from a list of building blocks to create a new type of food...
+            2. Enter a new recipe.
+               * Enter your own custom recipe into the cookbook tome...
+            3. Exit.
+               * Go back to the main menu...
+            """;
 
 
-    public static void intro() {
-        System.out.println(intro);
+    // Methods
+    public static void logo() {
+        System.out.println(logo);
     }
 
     public static void menu1() {
@@ -40,5 +52,8 @@ public class Art {
         System.out.println(sepRator1);
     }
 
+    public static void subMenuAdd() {
+        System.out.println(subMenuAdd);
+    }
 }
 

@@ -1,7 +1,5 @@
 import java.util.Random;
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class MainMenu {
@@ -21,12 +19,12 @@ public class MainMenu {
         boolean errorFlag = false;
 
         // Ints
-        int menuChoise = 0;
+        int menuChoice = 0;
 
-
+        // Logic
         while (running) {
             QOL.clearConsole();
-            Art.intro();
+            Art.logo();
             Art.menu1();
 
             if (errorFlag == true) {
@@ -38,9 +36,9 @@ public class MainMenu {
 
             try {
                 System.out.print(">");
-                menuChoise = sc.nextInt();
+                menuChoice = sc.nextInt();
 
-                switch (menuChoise) {
+                switch (menuChoice) {
                     case 1: {
                         new SubMenuAdd();
                     }
