@@ -1,4 +1,4 @@
-public class SubMenuAdd extends Main {
+public class SubMenuAdd  {
     public SubMenuAdd() {
         super();
     }
@@ -9,7 +9,24 @@ public class SubMenuAdd extends Main {
 
 
     private void runMenu() {
-        // Variables
+        // Variables //
+
+
+        // Flags
+        boolean running = true;
+
+
+        // Ints
+        int menuChoice = 0;
+
+
+
+
+        while (running) {
+            QOL.clearConsole();
+
+
+        }
 
 
 

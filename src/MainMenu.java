@@ -23,8 +23,6 @@ public class MainMenu {
         // Ints
         int menuChoise = 0;
 
-        // Objects
-        RecipeBook recipeBook = new RecipeBook();
 
         while (running) {
             QOL.clearConsole();
