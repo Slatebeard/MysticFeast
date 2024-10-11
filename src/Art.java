@@ -25,6 +25,8 @@ public class Art {
                * Venture out into the rain once more...
             """;
 
+    static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
+
 
     public static void intro() {
         System.out.println(intro);
@@ -32,6 +34,10 @@ public class Art {
 
     public static void menu1() {
         System.out.println(menu1);
+    }
+
+    public static void sepRator1() {
+        System.out.println(sepRator1);
     }
 
 }

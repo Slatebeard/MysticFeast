@@ -14,10 +14,14 @@ public class MainMenu {
     }
 
     protected void runMenu() {
-        // Variables
-        boolean running = true;
-        int menuChoise = 0;
+        // Variables //
 
+        // Flags
+        boolean running = true;
+        boolean errorFlag = false;
+
+        // Ints
+        int menuChoise = 0;
 
         // Objects
         RecipeBook recipeBook = new RecipeBook();
@@ -27,19 +31,16 @@ public class MainMenu {
             Art.intro();
             Art.menu1();
 
-
-            //TODO Figure out a smart way to check for valid input
+            if (errorFlag == true) {
+                System.out.println("You have entered something wrong... Try again please.");
+            } else {
+                errorFlag = false;
+            }
 
 
             try {
                 System.out.print(">");
                 menuChoise = sc.nextInt();
-
-
-
-                if (menuChoise < 1 || menuChoise > 4) {
-                    System.out.println("Please select a valid option...");
-                }
 
                 switch (menuChoise) {
                     case 1: {
@@ -55,11 +56,9 @@ public class MainMenu {
                         System.out.println();
                         running = false;
                     }
-
-
                 }
             } catch (Exception e) {
-                System.out.println("Invalid option");
+                errorFlag = true;
                 sc.nextLine();
             }
         }
