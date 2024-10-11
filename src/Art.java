@@ -1,7 +1,7 @@
 public class Art {
 
     // Art //
-    static String logo = """
+   private static String logo = """
                         \033[0;32m                                  Welcome To The     \033[0m
             
                                     ▗▖  ▗▖▄   ▄  ▄▄▄  ■  ▄ ▗▞▀▘    ▗▄▄▄▖▗▞▀▚▖▗▞▀▜▌ ▄▄▄  ■ \s
@@ -14,12 +14,12 @@ public class Art {
                           \033[0;32m         Find a seat near the hearth and get ready to order... \033[0m
             """;
 
-    static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
-    static String placer = ">";
+    private static String sepRator1 = "+~-~-~-~-~-~-~-~<*>~-~-~-~-~-~-~-~+";
+    private static String placer = ">";
 
 
     // Text //
-    static String menu1 = """
+    private static String menu1 = """
             1. Add a new recipe.
                * The tavern keep will open his dusty old cookbook and you together will come up a new recipe...
             2. Show all recipes.
@@ -31,7 +31,7 @@ public class Art {
             """;
 
 
-    static String subMenuAdd = """
+    private static String subMenuAdd = """
             1. Come up with a new recipe.
                * Choose from a list of building blocks to create a new type of food...
             2. Enter a new recipe.
@@ -40,9 +40,9 @@ public class Art {
                * Go back to the main menu...
             """;
 
-    static String subMenuAdd2 = """
+    private static String subMenuAdd2 = """
                                                Welcome to the recipe builder!
-                                               
+            
             Choose from a type of recipe you'd like to create.
             1. Breakfast.
             2. Lunch.
@@ -53,11 +53,34 @@ public class Art {
             """;
 
 
-
-    static String subMenuAdd3 = """
-            
+    private static String subMenuAddIngredientsList = """
+            1. Wheat
+            2. Eggs
+              * Fresh from the hen's nest.
+            3. Milk
+              * Straight from the village dairy.
+            4. Mandragora's Tail
+              * A rare root with magical properties.
+            5. Honey
+            6. Dragon Scales
+              * Shimmering and sharp, used for potions.
+            7. Elven Spice
+              * A fragrant blend of rare herbs.
+            8. Rabbit Meat
+              * Skinned and ready for the stew.
+            9. Basilisk Eye
+              * Known to petrify if not prepared correctly.
+            10. Barley
+            11. Gorgon Blood
+              * A potent ingredient for dark brews.
+            12. Goat Cheese
+            13. Griffon Feather
+              * Said to enhance strength when consumed.
+            14. Herbs of the Wilds
+              * A mix of forest flowers and leaves.
+            15. Troll Fat
+              * A thick and greasy substance, hard to acquire.
             """;
-
 
     // Methods
     public static void logo() {
@@ -84,6 +107,9 @@ public class Art {
         System.out.print(placer);
     }
 
+    public static void subMenuAddIngredientsList() {
+        System.out.println(subMenuAddIngredientsList);
+    }
 
 
     // Other Methods

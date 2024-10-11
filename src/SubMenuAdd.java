@@ -119,21 +119,22 @@ public class SubMenuAdd  {
             }
 
             if (!recipeType.isEmpty()) {
-                Art.menuRefresh();
+                System.out.println("Enter a name for the " + recipeType + " recipe:");
+                Art.placer();
 
-                System.out.println("Enter a title for your new " + recipeType + ": " );
-                String title = sc.nextLine();
+                String recipeName = sc.nextLine();
 
+                String[] ingredients = IngredientSelector.selectIngredients(recipeType);
 
+                System.out.println("Enter instructions for the " + recipeType + " recipe:");
+                Art.placer();
+                String instructions = sc.nextLine();
 
+                Recipe recipe = new Recipe(recipeName, ingredients, instructions);
 
+                recipeBook.addRecipe(recipe);
 
-
-
-
-
-
-
+                System.out.println(recipe + " was recorded in the tome!");
 
             }
         }
@@ -142,10 +143,6 @@ public class SubMenuAdd  {
     private void recipeInput() {
 
     }
-
-
-
-
 
     //TODO use this later for creating custom recipe
 //    System.out.println("Enter the ingredients for your new " + recipeType + ": " );
