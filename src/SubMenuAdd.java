@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class SubMenuAdd  {
     Scanner sc = new Scanner(System.in);
+    RecipeBook recipeBook = new RecipeBook();
 
     public SubMenuAdd() {
         runMenu();
@@ -58,6 +59,27 @@ public class SubMenuAdd  {
     }
 
     private void recipeGenerator() {
+        // Variables
+
+        boolean generating = true;
+
+
+
+
+        while (generating) {
+            QOL.clearConsole();
+            Art.logo();
+
+
+
+
+
+
+
+
+
+
+        }
 
     }
 

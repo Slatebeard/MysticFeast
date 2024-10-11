@@ -1,7 +1,6 @@
 public class Recipe {
     private String title;
-    private String ingredients;
-    private String ingredients2;
+    private String[] ingredients;
     private String instructions;
 
 
@@ -10,7 +9,7 @@ public class Recipe {
         return title;
     }
 
-    public String getIngredients() {
+    public String[] getIngredients() {
         return ingredients;
     }
 
@@ -23,7 +22,7 @@ public class Recipe {
         this.title = title;
     }
 
-    public void setIngredients(String ingredients) {
+    public void setIngredients(String[] ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -32,10 +31,9 @@ public class Recipe {
     }
 
     // RECIPE
-    public Recipe(String title, String ingredients, String instructions) {
+    public Recipe(String title, String[] ingredients, String instructions) {
         this.title = title;
         this.ingredients = ingredients;
-        this.ingredients2 = instructions;
         this.instructions = instructions;
     }
 }

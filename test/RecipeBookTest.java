@@ -11,7 +11,8 @@ public class RecipeBookTest {
     @Test
     void testAddRecipe() {
         RecipeBook recipeBook = new RecipeBook();
-        Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+        String[] ingredients = {"Flour", "Eggs"};
+        Recipe pancakes = new Recipe("Pancakes", ingredients, "Mix and cook.");
         recipeBook.addRecipe(pancakes);
         assertEquals(1, recipeBook.getAllRecipes().size());
     }
@@ -20,7 +21,8 @@ public class RecipeBookTest {
     @Test
     void testViewRecipe() {
         RecipeBook recipeBook = new RecipeBook();
-        Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+        String[] ingredients = {"Flour", "Eggs"};
+        Recipe pancakes = new Recipe("Pancakes", ingredients, "Mix and cook.");
         recipeBook.addRecipe(pancakes);
         Recipe viewRecipe = recipeBook.getRecipeByName("Pancakes");
         assertNotNull(viewRecipe);
@@ -31,7 +33,8 @@ public class RecipeBookTest {
     @Test
     void testRemoveRecipe() {
         RecipeBook recipeBook = new RecipeBook();
-        Recipe pancakes = new Recipe("Pancakes", "Flour", "Eggs");
+        String[] ingredients = {"Flour", "Eggs"};
+        Recipe pancakes = new Recipe("Pancakes", ingredients, "Mix and cook.");
         recipeBook.addRecipe(pancakes);
         recipeBook.removeRecipe(pancakes);
         assertEquals(0, recipeBook.getAllRecipes().size()); // Fixed typo

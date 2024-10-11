@@ -56,7 +56,6 @@ public class MainMenu {
                         break;
                     }
                     default: {
-//                        System.out.println("You have entered something wrong... Try again.");
                         errorFlag = true;
                     }
                 }

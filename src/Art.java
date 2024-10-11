@@ -38,6 +38,12 @@ public class Art {
                * Go back to the main menu...
             """;
 
+    static String getSubMenuAdd2 = """
+                                               Welcome to the recipe builder!
+            
+            
+            """;
+
 
     // Methods
     public static void logo() {
