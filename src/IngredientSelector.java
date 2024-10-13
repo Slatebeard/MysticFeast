@@ -22,16 +22,19 @@ public class IngredientSelector {
 
 
     public static String[] selectIngredients(String recipeType) {
-        Art.menuRefresh();
         Scanner scanner = new Scanner(System.in);
 
+        Art.menuRefresh();
+
+
         System.out.print("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (like, 1,3,5): ");
+        Art.subMenuAddIngredientsList();
+
         String userInput = scanner.nextLine();
 
         String[] inputNumbers = userInput.split(",");
         String[] selectedIngredients = new String[inputNumbers.length];
 
-        Art.subMenuAddIngredientsList();
 
         for (int i = 0; i < inputNumbers.length; i++) {
             int index = Integer.parseInt(inputNumbers[i].trim());

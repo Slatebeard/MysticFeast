@@ -41,8 +41,6 @@ public class Art {
             """;
 
     private static String subMenuAdd2 = """
-                                               Welcome to the recipe builder!
-            
             Choose from a type of recipe you'd like to create.
             1. Breakfast.
             2. Lunch.

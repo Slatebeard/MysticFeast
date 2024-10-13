@@ -42,12 +42,15 @@ public class SubMenuAdd  {
                 switch (menuChoice) {
                     case 1: {
                       recipeGenerator();
+                      break;
                     }
                     case 2: {
                        recipeInput();
+                       break;
                     }
                     case 3: {
                         running = false;
+                        break;
                     }
                 }
             } catch (Exception e) {
@@ -62,7 +65,7 @@ public class SubMenuAdd  {
 
         //Flag
         boolean generating = true;
-
+        boolean creating = true;
         boolean errorFlag = false;
 
 
@@ -91,6 +94,7 @@ public class SubMenuAdd  {
             try {
                 Art.placer();
                 menuChoice = sc.nextInt();
+                sc.nextLine();
 
                 switch (menuChoice) {
                     case 1: {
@@ -120,13 +124,18 @@ public class SubMenuAdd  {
                 sc.nextLine();
             }
 
-            if (!recipeType.isEmpty()) {
-                System.out.println("Enter a name for the " + recipeType + " recipe:");
-                Art.placer();
+            while (!recipeType.isEmpty()) {
 
+                Art.menuRefresh();
+
+                System.out.println("Enter a name for the " + recipeType + " recipe:");
+
+                Art.placer();
                 String recipeName = sc.nextLine();
 
                 String[] ingredients = IngredientSelector.selectIngredients(recipeType);
+
+                Art.menuRefresh();
 
                 System.out.println("Enter instructions for the " + recipeType + " recipe:");
                 Art.placer();
@@ -138,12 +147,15 @@ public class SubMenuAdd  {
 
                 System.out.println(recipe + " was recorded in the tome!");
 
+                System.out.println();
+                System.out.println("Press 1 to generate another recipe or press Enter to return to the previous menu...");
 
-                //TODO something here is wrong i need to fix the instance of RecipeBook in MainMenu
+                recipeType = "";
 
             }
         }
     }
+    //TODO something here is wrong i need to fix the instance of RecipeBook in MainMenu
 
     private void recipeInput() {
 
