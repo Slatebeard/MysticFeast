@@ -1,13 +1,15 @@
 import java.util.Scanner;
 
 
-
-public class SubMenuAdd  {
+public class SubMenuAdd {
     Scanner sc = new Scanner(System.in);
-    RecipeBook recipeBook = new RecipeBook();
     private boolean running = true;
+    private boolean custom = false;
 
-    public SubMenuAdd() {
+    private RecipeBook recipeBook;
+
+    public SubMenuAdd(RecipeBook recipeBook) {
+        this.recipeBook = recipeBook;
         runMenu();
     }
 
@@ -42,12 +44,14 @@ public class SubMenuAdd  {
 
                 switch (menuChoice) {
                     case 1: {
-                      recipeGenerator();
-                      break;
+                        custom = false;
+                        recipeGenerator();
+                        break;
                     }
                     case 2: {
-                       recipeInput();
-                       break;
+                        custom = true;
+                        recipeGenerator();
+                        break;
                     }
                     case 3: {
                         running = false;
@@ -56,7 +60,6 @@ public class SubMenuAdd  {
                 }
             } catch (Exception e) {
                 errorFlag = true;
-                sc.nextLine();
             }
         }
     }
@@ -76,7 +79,6 @@ public class SubMenuAdd  {
 
         // String
         String recipeType = "";
-
 
 
         // Logic
@@ -128,7 +130,6 @@ public class SubMenuAdd  {
                 }
             } catch (Exception e) {
                 errorFlag = true;
-                sc.nextLine();
             }
 
             while (creating) {
@@ -137,10 +138,19 @@ public class SubMenuAdd  {
 
                 System.out.println("Enter a name for the " + recipeType + " recipe:");
 
+
                 Art.placer();
                 String recipeName = sc.nextLine();
 
-                String[] ingredients = IngredientSelector.selectIngredients(recipeType);
+                String[] ingredients;
+
+                if (custom) {
+                    System.out.println("Enter your ingredients for your custom recipe (like, Eggs,Ham,Beef): ");
+                    Art.placer();
+                    ingredients = sc.nextLine().split(",\\s*");
+                } else {
+                    ingredients = IngredientSelector.selectIngredients(recipeType);
+                }
 
                 Art.menuRefresh();
 
@@ -152,32 +162,25 @@ public class SubMenuAdd  {
 
                 Recipe recipe = new Recipe(recipeName, ingredients, instructions);
 
+
                 recipeBook.addRecipe(recipe);
 
                 System.out.println(recipeName + " was recorded in the tome!");
 
 
-
                 System.out.println();
+
                 System.out.println("Press 1 to generate another recipe or press Enter to return to the main menu...");
+
                 if (sc.nextLine().equals("1")) {
                     generating = true;
                 } else {
                     creating = false;
                     generating = false;
                     running = false;
-
                 }
             }
         }
+        custom = false;
     }
-    
-
-    private void recipeInput() {
-
-    }
-
-    //TODO use this later for creating custom recipe
-//    System.out.println("Enter the ingredients for your new " + recipeType + ": " );
-//    String[] ingredients = sc.nextLine().split(", ");
 }

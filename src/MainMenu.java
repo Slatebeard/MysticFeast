@@ -3,8 +3,12 @@ import java.util.Scanner;
 
 
 public class MainMenu {
+
+    private RecipeBook recipeBook = new RecipeBook();
+
     Scanner sc = new Scanner(System.in);
     Random rand = new Random();
+
 
 
     public MainMenu() {
@@ -39,11 +43,11 @@ public class MainMenu {
 
                 switch (menuChoice) {
                     case 1: {
-                        new SubMenuAdd();
+                        new SubMenuAdd(recipeBook);
                         break;
                     }
                     case 2: {
-                        new SubMenuShowAll();
+                        new SubMenuShowAll(recipeBook);
                         break;
                     }
                     case 3: {
