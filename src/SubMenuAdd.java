@@ -87,6 +87,7 @@ public class SubMenuAdd  {
             } else {
                 errorFlag = false;
             }
+
             try {
                 Art.placer();
                 menuChoice = sc.nextInt();
