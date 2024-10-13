@@ -27,7 +27,8 @@ public class IngredientSelector {
         Art.menuRefresh();
 
 
-        System.out.print("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (like, 1,3,5): ");
+        System.out.println("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (like, 1,3,5): ");
+        QOL.setLine(1);
         Art.subMenuAddIngredientsList();
 
         String userInput = scanner.nextLine();

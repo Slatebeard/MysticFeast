@@ -51,6 +51,7 @@ public class MainMenu {
                         break;
                     }
                     case 4: {
+                        QOL.clearConsole();
                         System.out.println("Safe travels friend! Hope to see you again...");
                         running = false;
                         break;

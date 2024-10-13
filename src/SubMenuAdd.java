@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class SubMenuAdd  {
     Scanner sc = new Scanner(System.in);
     RecipeBook recipeBook = new RecipeBook();
+    private boolean running = true;
 
     public SubMenuAdd() {
         runMenu();
@@ -16,7 +17,7 @@ public class SubMenuAdd  {
 
 
         // Flags
-        boolean running = true;
+//        boolean running = true;
         boolean errorFlag = false;
 
 
@@ -65,7 +66,7 @@ public class SubMenuAdd  {
 
         //Flag
         boolean generating = true;
-        boolean creating = true;
+        boolean creating = false;
         boolean errorFlag = false;
 
 
@@ -99,22 +100,28 @@ public class SubMenuAdd  {
                 switch (menuChoice) {
                     case 1: {
                         recipeType = "Breakfast";
+                        creating = true;
                         break;
                     }
                     case 2: {
                         recipeType = "Lunch";
+                        creating = true;
                         break;
                     }
                     case 3: {
                         recipeType = "Supper";
+                        creating = true;
                         break;
                     }
                     case 4: {
                         recipeType = "Snack";
+                        creating = true;
                         break;
                     }
                     case 5: {
+                        creating = false;
                         generating = false;
+                        running = false;
                         break;
 
                     }
@@ -124,7 +131,7 @@ public class SubMenuAdd  {
                 sc.nextLine();
             }
 
-            while (!recipeType.isEmpty()) {
+            while (creating) {
 
                 Art.menuRefresh();
 
@@ -141,21 +148,30 @@ public class SubMenuAdd  {
                 Art.placer();
                 String instructions = sc.nextLine();
 
+                Art.menuRefresh();
+
                 Recipe recipe = new Recipe(recipeName, ingredients, instructions);
 
                 recipeBook.addRecipe(recipe);
 
-                System.out.println(recipe + " was recorded in the tome!");
+                System.out.println(recipeName + " was recorded in the tome!");
+
+
 
                 System.out.println();
-                System.out.println("Press 1 to generate another recipe or press Enter to return to the previous menu...");
+                System.out.println("Press 1 to generate another recipe or press Enter to return to the main menu...");
+                if (sc.nextLine().equals("1")) {
+                    generating = true;
+                } else {
+                    creating = false;
+                    generating = false;
+                    running = false;
 
-                recipeType = "";
-
+                }
             }
         }
     }
-    //TODO something here is wrong i need to fix the instance of RecipeBook in MainMenu
+    
 
     private void recipeInput() {
 

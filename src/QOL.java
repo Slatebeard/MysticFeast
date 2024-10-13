@@ -15,6 +15,8 @@ public class QOL {
 
     }
 
+    private static String line = "";
+
     public static String makeRed (int number) {
         String RED = "\033[0;31m";
         String RESET = "\033[0m";
@@ -25,6 +27,13 @@ public class QOL {
         String GREEN = "\033[0;32m";
         String RESET = "\033[0m";
         return GREEN + number + RESET;
+    }
+
+    public static String setLine (int amount) {
+        for (int i = 0; i < amount; i++) {
+            System.out.println();
+        }
+        return line;
     }
 
 }
