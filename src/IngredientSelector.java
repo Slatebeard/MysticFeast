@@ -36,11 +36,11 @@ public class IngredientSelector {
         String[] inputNumbers = userInput.split(",");
         String[] selectedIngredients = new String[inputNumbers.length];
 
-
         for (int i = 0; i < inputNumbers.length; i++) {
             int index = Integer.parseInt(inputNumbers[i].trim());
-            selectedIngredients[i] = ingredientList[index];
+            selectedIngredients[i] = ingredientList[index - 1];
         }
+
         return selectedIngredients;
     }
 }
