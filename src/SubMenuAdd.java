@@ -157,7 +157,6 @@ public class SubMenuAdd {
 
                 Recipe recipe = new Recipe(recipeName, ingredients, instructions);
 
-
                 recipeBook.addRecipe(recipe);
 
                 System.out.println(recipeName + " was recorded in the tome!");

@@ -11,7 +11,6 @@ public class MainMenu {
     Scanner sc = new Scanner(System.in);
     Random rand = new Random();
 
-
     public MainMenu() {
         runMenu();
     }
