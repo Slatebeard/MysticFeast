@@ -22,6 +22,7 @@ public class SubMenuShowAll {
 
         // Ints
         int counter = 0;
+        int currentSet = 0;
 
         Art.menuRefresh();
 
@@ -39,12 +40,14 @@ public class SubMenuShowAll {
                     counter++;
 
                     if (counter == 3) {
-                        System.out.println("Press Enter to see the next set of recipes...");
+                        currentSet++;
+                        System.out.println("Press Enter to cycle through the recipes or press 1 to return to the main menu...");
                         sc.nextLine();
                     }
                 }
             }
             QOL.setLine(1);
+            System.out.println("Showing recipes " + currentSet + " to " + counter + " of " + recipeBook.getAllRecipes().size() );
             System.out.print("Press Enter to return to the main menu...");
             sc.nextLine();
             running = false;
