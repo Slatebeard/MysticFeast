@@ -1,3 +1,5 @@
+import se.slatebeard.util.QOL;
+
 import java.util.Scanner;
 
 
@@ -19,7 +21,6 @@ public class SubMenuAdd {
 
 
         // Flags
-//        boolean running = true;
         boolean errorFlag = false;
 
 
@@ -34,7 +35,7 @@ public class SubMenuAdd {
             Art.subMenuAdd();
 
             if (errorFlag == true) {
-                System.out.println("You have entered something wrong... Try again please.");
+                System.out.println("Something went wrong friend, try again from the start...");
             } else {
                 errorFlag = false;
             }
@@ -59,6 +60,7 @@ public class SubMenuAdd {
                     }
                 }
             } catch (Exception e) {
+                System.out.println("Something went wrong friend, try from the start...");
                 errorFlag = true;
             }
         }

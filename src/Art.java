@@ -1,7 +1,9 @@
+import se.slatebeard.util.QOL;
+
 public class Art {
 
     // Art //
-   private static String logo = """
+    private static String logo = """
                         \033[0;32m                                  Welcome To The     \033[0m
             
                                     ▗▖  ▗▖▄   ▄  ▄▄▄  ■  ▄ ▗▞▀▘    ▗▄▄▄▖▗▞▀▚▖▗▞▀▜▌ ▄▄▄  ■ \s
@@ -43,9 +45,13 @@ public class Art {
     private static String subMenuAdd2 = """
             Choose from a type of recipe you'd like to create.
             1. Breakfast.
+               * A hearty morning feast to prepare for adventure...
             2. Lunch.
+               * Midday rations to fuel a hero’s journey...
             3. Supper.
+               * A twilight banquet shared by the campfire’s glow.
             4. Snack.
+               * A quick nibble to sustain you between quests...
             5. Exit.
                * Return to the main menu.
             """;
@@ -108,7 +114,6 @@ public class Art {
     public static void subMenuAddIngredientsList() {
         System.out.println(subMenuAddIngredientsList);
     }
-
 
     // Other Methods
     public static void menuRefresh() {

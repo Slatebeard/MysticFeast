@@ -1,3 +1,5 @@
+package se.slatebeard.util;
+
 public class QOL {
 
     public static void clearConsole() {

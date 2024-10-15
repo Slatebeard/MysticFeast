@@ -1,3 +1,5 @@
+import se.slatebeard.util.QOL;
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -8,7 +10,6 @@ public class MainMenu {
 
     Scanner sc = new Scanner(System.in);
     Random rand = new Random();
-
 
 
     public MainMenu() {
@@ -51,12 +52,12 @@ public class MainMenu {
                         break;
                     }
                     case 3: {
-                        new SubMenuRemove();
+                        new SubMenuRemove(recipeBook);
                         break;
                     }
                     case 4: {
                         QOL.clearConsole();
-                        System.out.println("Safe travels friend! Hope to see you again...");
+                        System.out.println("Safe travels friend! \nHope to see you again...");
                         running = false;
                         break;
                     }

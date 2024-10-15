@@ -1,3 +1,4 @@
+import se.slatebeard.util.QOL;
 import java.util.Scanner;
 
 
@@ -17,20 +18,23 @@ public class SubMenuShowAll {
     private void runMenu() {
         Art.menuRefresh();
 
-        System.out.println("The tavern keep opens his tome to the index, showing all the recipes...");
+
 
         while (running) {
             if (recipeBook.getAllRecipes().isEmpty()) {
+                QOL.setLine(1);
                 System.out.println("You and the tavern keep have yet to made any new recipes...");
             } else {
+                System.out.println("The tavern keep opens his tome to the index, showing all the recipes...");
+                QOL.setLine(1);
                 System.out.println("Here are all the recipes of your making:");
                 Art.sepRator1();
                 for (Recipe recipe : recipeBook.getAllRecipes()) {
                     printRecipe(recipe);
-                    Art.placer();
                 }
             }
-            System.out.println("Press Enter to return to the main menu...");
+            QOL.setLine(1);
+            System.out.print("Press Enter to return to the main menu...");
             sc.nextLine();
             running = false;
         }
