@@ -112,7 +112,7 @@ public class Art {
     }
 
     public static void subMenuAddIngredientsList() {
-        System.out.println(subMenuAddIngredientsList);
+        System.out.print(subMenuAddIngredientsList);
     }
 
     // Other Methods

@@ -5,42 +5,66 @@ import java.util.Scanner;
 public class Ingredients {
 
     private static String[] ingredientList = {
-            "Wheat",
-            "Eggs",
-            "Milk",
-            "Mandragora's Tail",
-            "Honey",
-            "Dragon Scales",
-            "Elven Spice",
-            "Rabbit Meat",
-            "Basilisk Eye",
-            "Barley",
-            "Gorgon Blood",
-            "Goat Cheese",
-            "Griffon Feather",
-            "Herbs of the Wilds",
-            "Troll Fat"
+            "Wheat", "Eggs", "Milk", "Mandragora's Tail", "Honey",
+            "Dragon Scales", "Elven Spice", "Rabbit Meat", "Basilisk Eye",
+            "Barley", "Gorgon Blood", "Goat Cheese", "Griffon Feather",
+            "Herbs of the Wilds", "Troll Fat"
     };
 
-
     public static String[] selectIngredients(String recipeType) {
+
+        // Flags
+        boolean running = true;
+
         Scanner scanner = new Scanner(System.in);
+        String[] selectedIngredients = {};
 
-        Art.menuRefresh();
+        while (running) {
+
+            Art.menuRefresh();
+
+            System.out.println("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (e.g., 1,3,5): ");
+            Art.sepRator1();
+            Art.subMenuAddIngredientsList();
+            Art.sepRator1();
+
+            Art.placer();
+
+            String userInput = scanner.nextLine();
+            String[] inputNumbers = userInput.split(",");
+
+            try {
+                selectedIngredients = new String[inputNumbers.length];
+                for (int i = 0; i < inputNumbers.length; i++) {
+                    int index = Integer.parseInt(inputNumbers[i].trim());
 
 
-        System.out.println("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (like, 1,3,5): ");
-        QOL.setLine(1);
-        Art.subMenuAddIngredientsList();
+                    if (index < 1 || index > ingredientList.length) {
+                        throw new IllegalArgumentException("Invalid ingredient number: " + index);
+                    }
 
-        String userInput = scanner.nextLine();
+                    selectedIngredients[i] = ingredientList[index - 1];
+                }
 
-        String[] inputNumbers = userInput.split(",");
-        String[] selectedIngredients = new String[inputNumbers.length];
 
-        for (int i = 0; i < inputNumbers.length; i++) {
-            int index = Integer.parseInt(inputNumbers[i].trim());
-            selectedIngredients[i] = ingredientList[index - 1];
+                running = false;
+
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input format. Please enter only numbers separated by commas.");
+                QOL.setLine(1);
+                System.out.println("Looks like you put in to many commas friend, press Enter to try again...");
+                scanner.nextLine();
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                QOL.setLine(1);
+                System.out.println("Looks like you tried to add something that does not exist, press Enter to try again...");
+                scanner.nextLine();
+            } catch (Exception e) {
+                System.out.println("An unexpected error occurred: " + e.getMessage());
+                QOL.setLine(1);
+                System.out.println("Press Enter to try again friend...3");
+                scanner.nextLine();
+            }
         }
 
         return selectedIngredients;

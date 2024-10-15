@@ -125,6 +125,7 @@ public class SubMenuAdd {
                 }
             } catch (Exception e) {
                 errorFlag = true;
+                sc.nextLine();
             }
 
             while (creating) {
@@ -132,8 +133,6 @@ public class SubMenuAdd {
                 Art.menuRefresh();
 
                 System.out.println("Enter a name for the " + recipeType + " recipe:");
-
-
                 Art.placer();
                 String recipeName = sc.nextLine();
 

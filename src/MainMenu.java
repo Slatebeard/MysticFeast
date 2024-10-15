@@ -20,6 +20,7 @@ public class MainMenu {
 
         // Flags
         boolean running = true;
+        boolean errorFlag = false;
 
         // Ints
         int menuChoice = 0;
@@ -29,6 +30,12 @@ public class MainMenu {
             QOL.clearConsole();
             Art.logo();
             Art.menu1();
+
+            if (errorFlag) {
+                System.out.println("You have entered something wrong... Try again please.");
+            } else {
+                errorFlag = false;
+            }
 
             try {
                 System.out.print(">");
@@ -55,7 +62,8 @@ public class MainMenu {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("You have entered something wrong... Try again.");
+                errorFlag = true;
+                sc.nextLine();
             }
         }
     }

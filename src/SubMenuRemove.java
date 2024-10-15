@@ -70,21 +70,22 @@ public class SubMenuRemove {
                 System.out.println("Are you sure you want to remove " + recipeRemove.getTitle() + " from the tome forever?");
                 System.out.println("Type " + QOL.makeTextGreen("yes") + " to confirm removal or type " + QOL.makeTextGreen("no") + " to return to the main menu..." );
 
+                while (removing) {
+                    userConf = sc.nextLine();
 
-                userConf = sc.nextLine();
-
-                if (userConf.equalsIgnoreCase("yes")) {
-                    Art.menuRefresh();
-                    recipeBook.removeRecipe(recipeRemove);
-                    QOL.setLine(1);
-                    System.out.print("Recipe " + recipeRemove.getTitle() + " was erased from the tome...");
-                } else {
-
-                    System.out.println("No recipe was removed.");
+                    if (userConf.equalsIgnoreCase("yes")) {
+                        Art.menuRefresh();
+                        recipeBook.removeRecipe(recipeRemove);
+                        QOL.setLine(1);
+                        System.out.print("\nRecipe " + recipeRemove.getTitle() + " was erased from the tome...");
+                    } else if (userConf.equalsIgnoreCase("no")) {
+                        System.out.println("No recipe was removed.");
+                    } else {
+                        System.out.println("You have entered something wrong friend, try again...");
+                    }
                 }
             } else {
-
-                System.out.println("You have entered something wrong friend. Try again...");
+                System.out.println("You have entered something wrong friend, try again...");
             }
 
 
