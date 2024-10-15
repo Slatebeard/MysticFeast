@@ -1,7 +1,6 @@
 import se.slatebeard.util.QOL;
+
 import java.util.Scanner;
-
-
 
 
 public class SubMenuShowAll {
@@ -16,9 +15,15 @@ public class SubMenuShowAll {
     }
 
     private void runMenu() {
+
+        // Variables //
+
+        // Flags
+
+        // Ints
+        int counter = 0;
+
         Art.menuRefresh();
-
-
 
         while (running) {
             if (recipeBook.getAllRecipes().isEmpty()) {
@@ -28,9 +33,15 @@ public class SubMenuShowAll {
                 System.out.println("The tavern keep opens his tome to the index, showing all the recipes...");
                 QOL.setLine(1);
                 System.out.println("Here are all the recipes of your making:");
-                Art.sepRator1();
                 for (Recipe recipe : recipeBook.getAllRecipes()) {
                     printRecipe(recipe);
+                    QOL.setLine(1);
+                    counter++;
+
+                    if (counter == 3) {
+                        System.out.println("Press Enter to see the next set of recipes...");
+                        sc.nextLine();
+                    }
                 }
             }
             QOL.setLine(1);
@@ -39,7 +50,9 @@ public class SubMenuShowAll {
             running = false;
         }
     }
+
     private void printRecipe(Recipe recipe) {
+        Art.sepRator1();
         System.out.println("Recipe Title: " + recipe.getTitle());
         System.out.println("Ingredients: ");
         for (String ingredient : recipe.getIngredients()) {

@@ -18,6 +18,10 @@ public class RecipeBook {
         return recipes;
     }
 
+    public int recipeCount() {
+        return recipes.size();
+    }
+
     public void removeRecipe(Recipe recipe) {
         recipes.remove(recipe);
     }

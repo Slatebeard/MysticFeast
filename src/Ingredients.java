@@ -2,7 +2,7 @@ import se.slatebeard.util.QOL;
 
 import java.util.Scanner;
 
-public class IngredientSelector {
+public class Ingredients {
 
     private static String[] ingredientList = {
             "Wheat",

@@ -1,7 +1,7 @@
 package se.slatebeard.util;
 
 public class QOL {
-
+    // Taken of internet! Not written by me.
     public static void clearConsole() {
         try {
             if (System.getProperty("os.name").contains("Windows")) {

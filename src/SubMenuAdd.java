@@ -1,5 +1,4 @@
 import se.slatebeard.util.QOL;
-
 import java.util.Scanner;
 
 
@@ -21,7 +20,7 @@ public class SubMenuAdd {
 
 
         // Flags
-        boolean errorFlag = false;
+
 
 
         // Ints
@@ -34,11 +33,6 @@ public class SubMenuAdd {
             Art.logo();
             Art.subMenuAdd();
 
-            if (errorFlag == true) {
-                System.out.println("Something went wrong friend, try again from the start...");
-            } else {
-                errorFlag = false;
-            }
             try {
                 Art.placer();
                 menuChoice = sc.nextInt();
@@ -61,7 +55,6 @@ public class SubMenuAdd {
                 }
             } catch (Exception e) {
                 System.out.println("Something went wrong friend, try from the start...");
-                errorFlag = true;
             }
         }
     }
@@ -151,7 +144,7 @@ public class SubMenuAdd {
                     Art.placer();
                     ingredients = sc.nextLine().split(",\\s*");
                 } else {
-                    ingredients = IngredientSelector.selectIngredients(recipeType);
+                    ingredients = Ingredients.selectIngredients(recipeType);
                 }
 
                 Art.menuRefresh();

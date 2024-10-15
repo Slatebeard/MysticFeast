@@ -2,7 +2,6 @@ import se.slatebeard.util.QOL;
 import java.util.Scanner;
 
 
-
 public class SubMenuRemove {
     Scanner scanner = new Scanner(System.in);
     private boolean running = true;
@@ -29,9 +28,17 @@ public class SubMenuRemove {
         // Logic
 
         while (running) {
-            QOL.clearConsole();
-            Art.logo();
-            Art.SubMenuRemove();
+            Art.menuRefresh();
+
+            if (recipeBook.getAllRecipes().isEmpty()) {
+                QOL.setLine(1);
+                System.out.println("You and the tavern keep have yet to made any new recipes...");
+            } else {
+
+            }
+
+
+
 
 
 
