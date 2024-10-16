@@ -23,6 +23,7 @@ public class MainMenu {
         // Ints
         int menuChoice = 0;
 
+
         // Logic
         while (running) {
             QOL.clearConsole();

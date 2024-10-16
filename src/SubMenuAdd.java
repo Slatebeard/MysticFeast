@@ -14,13 +14,11 @@ public class SubMenuAdd {
         runMenu();
     }
 
-
     private void runMenu() {
         // Variables //
 
 
         // Flags
-
 
 
         // Ints
@@ -66,7 +64,6 @@ public class SubMenuAdd {
         boolean generating = true;
         boolean creating = false;
         boolean errorFlag = false;
-
 
         // Int
         int menuChoice;
@@ -144,9 +141,8 @@ public class SubMenuAdd {
                     ingredients = sc.nextLine().split(",\\s*");
                 } else {
                     ingredients = Ingredients.selectIngredients(recipeType);
+                    Art.menuRefresh();
                 }
-
-                Art.menuRefresh();
 
                 System.out.println("Enter instructions for the " + recipeType + " recipe:");
                 Art.placer();
@@ -154,9 +150,21 @@ public class SubMenuAdd {
 
                 Art.menuRefresh();
 
-                Recipe recipe = new Recipe(recipeName, ingredients, instructions);
 
-                recipeBook.addRecipe(recipe);
+                if (recipeType.equals("Breakfast")) {
+                    Breakfast breakfast = new Breakfast(recipeName, ingredients, instructions, true);
+                    recipeBook.addRecipe(breakfast);
+                } else if (recipeType.equals("Lunch")) {
+                    Lunch lunch = new Lunch(recipeName, ingredients, instructions, true);
+                    recipeBook.addRecipe(lunch);
+                } else if (recipeType.equals("Supper")) {
+                    Supper supper = new Supper(recipeName, ingredients, instructions, true);
+                    recipeBook.addRecipe(supper);
+                } else {
+                    Snack snack = new Snack(recipeName, ingredients, instructions, true);
+                    recipeBook.addRecipe(snack);
+                }
+                
 
                 System.out.println(recipeName + " was recorded in the tome!");
 
