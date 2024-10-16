@@ -160,8 +160,7 @@ public class SubMenuAdd {
 
                 System.out.println(recipeName + " was recorded in the tome!");
 
-
-                System.out.println();
+                QOL.setLine(1);
 
                 System.out.println("Press 1 to generate another recipe or press Enter to return to the main menu...");
 

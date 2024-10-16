@@ -1,6 +1,4 @@
 import se.slatebeard.util.QOL;
-
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -16,13 +14,11 @@ public class SubMenuRemove {
     }
 
     private void runMenu() {
-        // Variables //
-
         // Flags
         boolean removing = false;
 
         // Ints
-        int userChoice;
+        int userChoice = 0;
 
         // Strings
         String userConf = "";
@@ -48,9 +44,7 @@ public class SubMenuRemove {
             QOL.setLine(1);
 
             System.out.println("Choose the recipe by number you want to remove.");
-
             Art.placer();
-
 
             try {
                 userChoice = sc.nextInt();
@@ -63,37 +57,39 @@ public class SubMenuRemove {
 
             if (userChoice == 0) {
                 System.out.println("No recipe was removed, returning to main menu...");
+                running = false;
             } else if (userChoice > 0 && userChoice <= recipeBook.getAllRecipes().size()) {
 
                 Recipe recipeRemove = recipeBook.getAllRecipes().get(userChoice - 1);
                 QOL.setLine(1);
                 System.out.println("Are you sure you want to remove " + recipeRemove.getTitle() + " from the tome forever?");
-                System.out.println("Type " + QOL.makeTextGreen("yes") + " to confirm removal or type " + QOL.makeTextGreen("no") + " to return to the main menu..." );
+                QOL.setLine(1);
+                System.out.println("Type " + QOL.makeTextGreen("yes") + " to confirm removal or type " + QOL.makeTextRed("no") + " to return to the main menu...");
+                Art.placer();
+                userConf = sc.nextLine();
 
-                while (removing) {
-                    userConf = sc.nextLine();
-
-                    if (userConf.equalsIgnoreCase("yes")) {
-                        Art.menuRefresh();
-                        recipeBook.removeRecipe(recipeRemove);
-                        QOL.setLine(1);
-                        System.out.print("\nRecipe " + recipeRemove.getTitle() + " was erased from the tome...");
-                    } else if (userConf.equalsIgnoreCase("no")) {
-                        System.out.println("No recipe was removed.");
-                    } else {
-                        System.out.println("You have entered something wrong friend, try again...");
-                    }
+                if (userConf.equalsIgnoreCase("yes")) {
+                    Art.menuRefresh();
+                    recipeBook.removeRecipe(recipeRemove);
+                    QOL.setLine(1);
+                    System.out.print("Recipe " + recipeRemove.getTitle() + " was erased from the tome...");
+                    QOL.setLine(2);
+                } else if (userConf.equalsIgnoreCase("no")) {
+                    System.out.println("No recipe was removed.");
+                    running = false;
+                } else {
+                    System.out.println("Invalid input, returning to main menu...");
                 }
             } else {
                 System.out.println("You have entered something wrong friend, try again...");
+                QOL.setLine(1);
             }
 
+            QOL.setLine(1);
 
-            System.out.println("Press 1 to remove another recipe or press Enter to return to the main menu...");
-
-            if (sc.nextLine().equals("1")) {
-                running = true;
-            } else {
+            System.out.print("Enter 1 to remove another recipe or any other key to exit...");
+            String input = sc.nextLine();
+            if (!input.equals("1")) {
                 running = false;
             }
         }

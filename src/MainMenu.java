@@ -1,8 +1,6 @@
 import se.slatebeard.util.QOL;
-
 import java.util.Random;
 import java.util.Scanner;
-
 
 public class MainMenu {
 
@@ -41,16 +39,23 @@ public class MainMenu {
                 System.out.print(">");
                 menuChoice = sc.nextInt();
 
+                if (menuChoice < 1 || menuChoice > 4) {
+                    throw new IllegalArgumentException("You have entered something wrong friend, try again please...");
+                }
+
                 switch (menuChoice) {
                     case 1: {
+                        errorFlag = false;
                         new SubMenuAdd(recipeBook);
                         break;
                     }
                     case 2: {
+                        errorFlag = false;
                         new SubMenuShowAll(recipeBook);
                         break;
                     }
                     case 3: {
+                        errorFlag = false;
                         new SubMenuRemove(recipeBook);
                         break;
                     }

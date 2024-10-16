@@ -1,6 +1,6 @@
 import se.slatebeard.util.QOL;
-
 import java.util.Scanner;
+
 
 public class Ingredients {
 
@@ -24,6 +24,7 @@ public class Ingredients {
             Art.menuRefresh();
 
             System.out.println("Enter the numbers of the ingredients you want to add to your " + recipeType + " recipe (e.g., 1,3,5): ");
+
             Art.sepRator1();
             Art.subMenuAddIngredientsList();
             Art.sepRator1();
@@ -38,15 +39,12 @@ public class Ingredients {
                 for (int i = 0; i < inputNumbers.length; i++) {
                     int index = Integer.parseInt(inputNumbers[i].trim());
 
-
                     if (index < 1 || index > ingredientList.length) {
                         throw new IllegalArgumentException("Invalid ingredient number: " + index);
                     }
 
                     selectedIngredients[i] = ingredientList[index - 1];
                 }
-
-
                 running = false;
 
             } catch (NumberFormatException e) {
@@ -66,7 +64,6 @@ public class Ingredients {
                 scanner.nextLine();
             }
         }
-
         return selectedIngredients;
     }
 }
