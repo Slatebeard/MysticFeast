@@ -2,6 +2,8 @@ package se.slatebeard.img;
 
 import se.slatebeard.util.QOL;
 
+import java.io.PrintWriter;
+
 public class Art {
 
     // Art //
@@ -99,6 +101,11 @@ public class Art {
 
     public static void sepRator1() {
         System.out.println(sepRator1);
+    }
+
+    public static void sepRator2() {
+        PrintWriter writer = new PrintWriter(System.out);
+        writer.println(sepRator1);
     }
 
     public static void subMenuAdd() {

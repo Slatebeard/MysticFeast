@@ -20,6 +20,12 @@ public class Snack extends Recipe {
     public String getType() {
         return "Long Rest";
     }
+
+
+    @Override
+    public String getFood() {
+        return "snack";
+    }
 }
 
 

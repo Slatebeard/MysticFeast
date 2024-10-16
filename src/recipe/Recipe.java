@@ -41,4 +41,6 @@ public abstract class Recipe {
 
     public abstract String getType();
 
+    public abstract String getFood();
+
 }

@@ -2,6 +2,7 @@ package recipe;
 
 public class Breakfast extends Recipe {
     private boolean isLongrest;
+    private boolean isBreakfast;
 
     public Breakfast(String title, String[] ingredients, String instructions, boolean isLongrest) {
         super(title, ingredients, instructions);
@@ -20,4 +21,12 @@ public class Breakfast extends Recipe {
     public String getType() {
         return "Long Rest";
     }
+
+    @Override
+    public String getFood() {
+        return "breakfast";
+    }
+
+
+
 }

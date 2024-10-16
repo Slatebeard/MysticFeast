@@ -1,5 +1,6 @@
 package menu;
 
+import recipe.Recipe;
 import se.slatebeard.util.QOL;
 import se.slatebeard.img.Art;
 import java.util.Scanner;
@@ -64,6 +65,7 @@ public class MainMenu {
                     }
                     case 4: {
                         QOL.clearConsole();
+                        recipeBook.saveAllRecipes(recipeBook.getAllRecipes());
                         System.out.println("Safe travels friend! \nHope to see you again...");
                         running = false;
                         break;

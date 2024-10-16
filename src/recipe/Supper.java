@@ -21,4 +21,9 @@ public class Supper extends Recipe {
     public String getType() {
         return "Long Rest";
     }
+
+    @Override
+    public String getFood() {
+        return "supper";
+    }
 }
