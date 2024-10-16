@@ -1,3 +1,5 @@
+package se.slatebeard.img;
+
 import se.slatebeard.util.QOL;
 
 public class Art {

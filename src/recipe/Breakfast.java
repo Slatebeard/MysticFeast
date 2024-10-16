@@ -1,3 +1,5 @@
+package recipe;
+
 public class Breakfast extends Recipe {
     private boolean isLongrest;
 
@@ -12,5 +14,10 @@ public class Breakfast extends Recipe {
 
     public void setLongrest(boolean longrest) {
         isLongrest = longrest;
+    }
+
+    @Override
+    public String getType() {
+        return "Long Rest";
     }
 }

@@ -1,4 +1,8 @@
+package menu;
+
+import recipe.Recipe;
 import se.slatebeard.util.QOL;
+import se.slatebeard.img.Art;
 
 import java.util.Scanner;
 
@@ -46,14 +50,13 @@ public class SubMenuShowAll {
 
     private void printRecipe(Recipe recipe) {
         Art.sepRator1();
-        System.out.println("Recipe Title: " + recipe.getTitle());
+        System.out.println("Title: " + recipe.getTitle());
         System.out.println("Ingredients: ");
         for (String ingredient : recipe.getIngredients()) {
             System.out.println("- " + ingredient);
         }
         System.out.println("Instructions: " + recipe.getInstructions());
+        System.out.println("Time to eat: " + recipe.getType());
         Art.sepRator1();
     }
-
-
 }

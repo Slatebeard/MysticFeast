@@ -1,3 +1,5 @@
+package recipe;
+
 public class Snack extends Recipe {
     private boolean isBonusAction;
 
@@ -12,6 +14,11 @@ public class Snack extends Recipe {
 
     public void setBonusAction(boolean bonusAction) {
         isBonusAction = bonusAction;
+    }
+
+    @Override
+    public String getType() {
+        return "Long Rest";
     }
 }
 

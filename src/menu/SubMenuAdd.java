@@ -1,3 +1,7 @@
+package menu;
+
+import recipe.*;
+import se.slatebeard.img.Art;
 import se.slatebeard.util.QOL;
 import java.util.Scanner;
 
@@ -150,7 +154,6 @@ public class SubMenuAdd {
 
                 Art.menuRefresh();
 
-
                 if (recipeType.equals("Breakfast")) {
                     Breakfast breakfast = new Breakfast(recipeName, ingredients, instructions, true);
                     recipeBook.addRecipe(breakfast);
@@ -164,13 +167,12 @@ public class SubMenuAdd {
                     Snack snack = new Snack(recipeName, ingredients, instructions, true);
                     recipeBook.addRecipe(snack);
                 }
-                
 
                 System.out.println(recipeName + " was recorded in the tome!");
 
                 QOL.setLine(1);
 
-                System.out.println("Press 1 to generate another recipe or press Enter to return to the main menu...");
+                System.out.print("Enter 1 to generate another recipe or press Enter to return to the main menu...");
 
                 if (sc.nextLine().equals("1")) {
                     generating = true;

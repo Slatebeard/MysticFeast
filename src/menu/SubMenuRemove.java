@@ -1,4 +1,8 @@
+package menu;
+
+import recipe.Recipe;
 import se.slatebeard.util.QOL;
+import se.slatebeard.img.Art;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -87,7 +91,7 @@ public class SubMenuRemove {
 
             QOL.setLine(1);
 
-            System.out.print("Enter 1 to remove another recipe or any other key to exit...");
+            System.out.print("Enter 1 to remove another recipe or press Enter to exit...");
             String input = sc.nextLine();
             if (!input.equals("1")) {
                 running = false;

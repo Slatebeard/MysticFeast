@@ -1,4 +1,7 @@
+package menu;
+
 import se.slatebeard.util.QOL;
+import se.slatebeard.img.Art;
 import java.util.Scanner;
 
 
@@ -48,17 +51,14 @@ public class Ingredients {
                 running = false;
 
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input format. Please enter only numbers separated by commas.");
                 QOL.setLine(1);
                 System.out.println("Looks like you put in to many commas friend, press Enter to try again...");
                 scanner.nextLine();
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
                 QOL.setLine(1);
                 System.out.println("Looks like you tried to add something that does not exist, press Enter to try again...");
                 scanner.nextLine();
             } catch (Exception e) {
-                System.out.println("An unexpected error occurred: " + e.getMessage());
                 QOL.setLine(1);
                 System.out.println("Press Enter to try again friend...3");
                 scanner.nextLine();

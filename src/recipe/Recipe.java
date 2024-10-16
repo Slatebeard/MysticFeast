@@ -1,4 +1,6 @@
-public class Recipe {
+package recipe;
+
+public abstract class Recipe {
     private String title;
     private String[] ingredients;
     private String instructions;
@@ -36,4 +38,7 @@ public class Recipe {
         this.ingredients = ingredients;
         this.instructions = instructions;
     }
+
+    public abstract String getType();
+
 }

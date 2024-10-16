@@ -1,5 +1,7 @@
+package menu;
+
 import se.slatebeard.util.QOL;
-import java.util.Random;
+import se.slatebeard.img.Art;
 import java.util.Scanner;
 
 public class MainMenu {
@@ -7,7 +9,7 @@ public class MainMenu {
     private RecipeBook recipeBook = new RecipeBook();
 
     Scanner sc = new Scanner(System.in);
-    Random rand = new Random();
+
 
     public MainMenu() {
         runMenu();
