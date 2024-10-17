@@ -1,8 +1,10 @@
 package recipe;
 
+import java.util.List;
+
 public abstract class Recipe {
     private String title;
-    private String[] ingredients;
+    private List<String> ingredients;
     private String instructions;
 
 
@@ -11,7 +13,7 @@ public abstract class Recipe {
         return title;
     }
 
-    public String[] getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
@@ -24,7 +26,7 @@ public abstract class Recipe {
         this.title = title;
     }
 
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -33,7 +35,7 @@ public abstract class Recipe {
     }
 
     // RECIPE
-    public Recipe(String title, String[] ingredients, String instructions) {
+    public Recipe(String title, List<String> ingredients, String instructions) {
         this.title = title;
         this.ingredients = ingredients;
         this.instructions = instructions;

@@ -1,6 +1,6 @@
 package menu;
 
-import recipe.Recipe;
+
 import se.slatebeard.util.QOL;
 import se.slatebeard.img.Art;
 import java.util.Scanner;
@@ -10,6 +10,8 @@ public class MainMenu {
     private RecipeBook recipeBook = new RecipeBook();
 
     Scanner sc = new Scanner(System.in);
+
+
 
 
     public MainMenu() {
@@ -25,7 +27,6 @@ public class MainMenu {
 
         // Ints
         int menuChoice = 0;
-
 
         // Logic
         while (running) {

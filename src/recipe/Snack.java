@@ -1,9 +1,11 @@
 package recipe;
 
+import java.util.List;
+
 public class Snack extends Recipe {
     private boolean isBonusAction;
 
-    public Snack(String title, String[] ingredients, String instructions, boolean isBonusAction) {
+    public Snack(String title, List<String> ingredients, String instructions, boolean isBonusAction) {
         super(title,ingredients,instructions);
         this.isBonusAction = isBonusAction;
     }

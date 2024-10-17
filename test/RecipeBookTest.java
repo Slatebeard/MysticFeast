@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import recipe.Breakfast;
 import recipe.Recipe;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -17,7 +19,7 @@ public class RecipeBookTest {
         RecipeBook recipeBook = new RecipeBook();
         String[] ingredients = {"Flour", "Eggs"};
         String instructions = "Mix and cook";
-        Breakfast pancakes = new Breakfast("Pancakes", ingredients,instructions,true);
+        Breakfast pancakes = new Breakfast("Pancakes", Arrays.asList(ingredients), instructions, true);
         recipeBook.addRecipe(pancakes);
         assertEquals(1, recipeBook.getAllRecipes().size());
     }
@@ -28,7 +30,7 @@ public class RecipeBookTest {
         RecipeBook recipeBook = new RecipeBook();
         String[] ingredients = {"Flour", "Eggs"};
         String instructions = "Mix and cook";
-        Breakfast pancakes = new Breakfast("Pancakes", ingredients,instructions,true);
+        Breakfast pancakes = new Breakfast("Pancakes", Arrays.asList(ingredients), instructions, true);
         recipeBook.addRecipe(pancakes);
         Recipe viewRecipe = recipeBook.getRecipeByName("Pancakes");
         assertNotNull(viewRecipe);
@@ -41,9 +43,9 @@ public class RecipeBookTest {
         RecipeBook recipeBook = new RecipeBook();
         String[] ingredients = {"Flour", "Eggs"};
         String instructions = "Mix and cook";
-        Breakfast pancakes = new Breakfast("Pancakes", ingredients,instructions,true);
+        Breakfast pancakes = new Breakfast("Pancakes", Arrays.asList(ingredients), instructions, true);
         recipeBook.addRecipe(pancakes);
         recipeBook.removeRecipe(pancakes);
-        assertEquals(0, recipeBook.getAllRecipes().size()); // Fixed typo
+        assertEquals(0, recipeBook.getAllRecipes().size());
     }
 }

@@ -3,6 +3,8 @@ package menu;
 import recipe.*;
 import se.slatebeard.img.Art;
 import se.slatebeard.util.QOL;
+
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -133,26 +135,44 @@ public class SubMenuAdd {
 
                 Art.menuRefresh();
 
-                System.out.println("Enter a name for the " + recipeType + " recipe:");
-                Art.placer();
-                String recipeName = sc.nextLine();
+                String recipeName = "";
 
-                String[] ingredients;
+                do {
+                    Art.menuRefresh();
+                    System.out.println("Enter a name for the " + recipeType + " recipe:");
+                    Art.placer();
+                    recipeName = sc.nextLine();
+                    if (recipeName.trim().isEmpty()) {
+                        System.out.println("The name of your recipe cannot be empty...");
+                    }
+                } while (recipeName.trim().isEmpty());
+
+
+
+                List<String> ingredients;
 
                 if (custom) {
                     System.out.println("Enter your ingredients for your custom recipe (like, Eggs,Ham,Beef): ");
                     Art.placer();
-                    ingredients = sc.nextLine().split(",\\s*");
+                    ingredients = List.of(sc.nextLine().split(",\\s*"));
                 } else {
-                    ingredients = Ingredients.selectIngredients(recipeType);
+                    ingredients = List.of(Ingredients.selectIngredients(recipeType));
                     Art.menuRefresh();
                 }
 
-                System.out.println("Enter instructions for the " + recipeType + " recipe:");
-                Art.placer();
-                String instructions = sc.nextLine();
+                String instructions = "";
 
-                Art.menuRefresh();
+                do {
+                    Art.menuRefresh();
+                    System.out.println("Enter instructions for the " + recipeType + " recipe:");
+                    Art.placer();
+                    instructions = sc.nextLine();
+
+                    if (instructions.trim().isEmpty()) {
+                        System.out.println("The instructions of your recipe cannot be empty...");
+                    }
+
+                } while (instructions.trim().isEmpty());
 
                 if (recipeType.equals("Breakfast")) {
                     Breakfast breakfast = new Breakfast(recipeName, ingredients, instructions, true);

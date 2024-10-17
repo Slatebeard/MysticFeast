@@ -1,10 +1,12 @@
 package recipe;
 
+import java.util.List;
+
 public class Supper extends Recipe {
     private boolean isLongRest;
 
 
-    public Supper(String title, String[] ingredients, String instructions, boolean isLongRest) {
+    public Supper(String title, List<String> ingredients, String instructions, boolean isLongRest) {
         super(title, ingredients, instructions);
         this.isLongRest = isLongRest;
     }

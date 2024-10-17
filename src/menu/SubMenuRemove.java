@@ -5,8 +5,10 @@ import se.slatebeard.util.QOL;
 import se.slatebeard.img.Art;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.*;
 
 public class SubMenuRemove {
+    // Fields
     private RecipeBook recipeBook;
     private Scanner sc = new Scanner(System.in);
     private boolean running = true;
@@ -18,6 +20,9 @@ public class SubMenuRemove {
     }
 
     private void runMenu() {
+
+        // Variables //
+
         // Flags
         boolean removing = false;
 
@@ -75,6 +80,12 @@ public class SubMenuRemove {
                 if (userConf.equalsIgnoreCase("yes")) {
                     Art.menuRefresh();
                     recipeBook.removeRecipe(recipeRemove);
+                    try {
+                        File file = new File("recipes/" + recipeRemove.getTitle() + ".txt");
+                        file.delete();
+                    } catch (Exception e) {
+                        System.out.println("Could not remove recipe from file the tome...");
+                    }
                     QOL.setLine(1);
                     System.out.print("Recipe " + recipeRemove.getTitle() + " was erased from the tome...");
                     QOL.setLine(2);
