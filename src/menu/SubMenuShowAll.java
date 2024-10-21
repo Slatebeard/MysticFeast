@@ -7,6 +7,7 @@ import se.slatebeard.img.Art;
 import java.util.Scanner;
 
 public class SubMenuShowAll {
+    // Fields
     private RecipeBook recipeBook;
     private Scanner sc = new Scanner(System.in);
     private boolean running = true;
@@ -21,12 +22,12 @@ public class SubMenuShowAll {
 
         // Variables //
 
-        // Flags
+            // Flags
 
-        // Ints
+            // Ints
 
         Art.menuRefresh();
-
+        // Logic
         while (running) {
 
             if (recipeBook.getAllRecipes().isEmpty()) {

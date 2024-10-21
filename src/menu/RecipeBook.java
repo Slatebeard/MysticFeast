@@ -79,7 +79,7 @@ public class RecipeBook {
             while (sc.hasNextLine() && !(line = sc.nextLine()).startsWith("Instructions:")) { // READ UNTIL INSTRUCTIONS
                 System.out.println("Reading line: " + line);
                 if (!line.trim().isEmpty() && line.startsWith("- ")) {
-                    ingredients.add(line.substring(2));  // Remove the "- " prefix
+                    ingredients.add(line.substring(2));
                 }
             }
             // Instructions
@@ -132,8 +132,6 @@ public class RecipeBook {
             }
         }
     }
-
-
 
     private void printRecipeToFile(Recipe recipe, PrintWriter writer) {
         writer.println(recipe.getFood());

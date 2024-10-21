@@ -24,10 +24,10 @@ public class SubMenuAdd {
         // Variables //
 
 
-        // Flags
+            // Flags
 
 
-        // Ints
+            // Ints
         int menuChoice = 0;
 
 
@@ -37,9 +37,11 @@ public class SubMenuAdd {
             Art.logo();
             Art.subMenuAdd();
 
+
             try {
                 Art.placer();
                 menuChoice = sc.nextInt();
+                sc.nextLine();
 
                 switch (menuChoice) {
                     case 1: {
@@ -58,7 +60,16 @@ public class SubMenuAdd {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Something went wrong friend, try from the start...");
+                System.out.print("Something went wrong friend, try from the start...");
+//                running = false;
+//                break;
+            }
+            sc.nextLine();
+
+            if (sc.nextLine().isEmpty()) {
+                running = false;
+            } else {
+                running = true;
             }
         }
     }
@@ -66,16 +77,16 @@ public class SubMenuAdd {
     private void recipeGenerator() {
         // Variables //
 
-        //Flag
+            //Flags
         boolean generating = true;
         boolean creating = false;
         boolean errorFlag = false;
 
-        // Int
+            // Ints
         int menuChoice;
         int choice;
 
-        // String
+            // Strings
         String recipeType = "";
 
 
@@ -133,7 +144,6 @@ public class SubMenuAdd {
 
             while (creating) {
 
-                Art.menuRefresh();
 
                 String recipeName = "";
 
@@ -147,14 +157,12 @@ public class SubMenuAdd {
                     }
                 } while (recipeName.trim().isEmpty());
 
-
-
                 List<String> ingredients;
 
                 if (custom) {
                     System.out.println("Enter your ingredients for your custom recipe (like, Eggs,Ham,Beef): ");
                     Art.placer();
-                    ingredients = List.of(sc.nextLine().split(",\\s*"));
+                    ingredients = List.of(sc.nextLine().split(","));
                 } else {
                     ingredients = List.of(Ingredients.selectIngredients(recipeType));
                     Art.menuRefresh();
@@ -163,7 +171,6 @@ public class SubMenuAdd {
                 String instructions = "";
 
                 do {
-                    Art.menuRefresh();
                     System.out.println("Enter instructions for the " + recipeType + " recipe:");
                     Art.placer();
                     instructions = sc.nextLine();

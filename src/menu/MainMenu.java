@@ -6,9 +6,8 @@ import se.slatebeard.img.Art;
 import java.util.Scanner;
 
 public class MainMenu {
-
+    // Fields
     private RecipeBook recipeBook = new RecipeBook();
-
     Scanner sc = new Scanner(System.in);
 
 
@@ -21,11 +20,11 @@ public class MainMenu {
     protected void runMenu() {
         // Variables //
 
-        // Flags
+            // Flags
         boolean running = true;
         boolean errorFlag = false;
 
-        // Ints
+            // Ints
         int menuChoice = 0;
 
         // Logic

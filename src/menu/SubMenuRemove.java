@@ -23,13 +23,13 @@ public class SubMenuRemove {
 
         // Variables //
 
-        // Flags
+            // Flags
         boolean removing = false;
 
-        // Ints
+            // Ints
         int userChoice = 0;
 
-        // Strings
+            // Strings
         String userConf = "";
 
         // Logic
@@ -39,6 +39,12 @@ public class SubMenuRemove {
             if (recipeBook.getAllRecipes().isEmpty()) {
                 QOL.setLine(1);
                 System.out.println("You and the tavern keep have yet to made any new recipes...");
+
+                QOL.setLine(1);
+                System.out.print("Press Enter to return to the main menu...");
+                sc.nextLine();
+                running = false;
+                break;
             } else {
                 System.out.println("The tavern keep opens his tome, showing all the recipes...");
                 QOL.setLine(1);
@@ -47,13 +53,14 @@ public class SubMenuRemove {
                 for (Recipe recipe : recipeBook.getAllRecipes()) {
                     printRecipeTitle(recipe);
                     counter++;
+
+                    Art.sepRator1();
+                    QOL.setLine(1);
+
+                    System.out.println("Choose the recipe by number you want to remove.");
+                    Art.placer();
                 }
             }
-            Art.sepRator1();
-            QOL.setLine(1);
-
-            System.out.println("Choose the recipe by number you want to remove.");
-            Art.placer();
 
             try {
                 userChoice = sc.nextInt();
