@@ -7,15 +7,6 @@ public class Snack extends Recipe {
 
     public Snack(String title, List<String> ingredients, String instructions, boolean isBonusAction) {
         super(title,ingredients,instructions);
-        this.isBonusAction = isBonusAction;
-    }
-
-    public boolean isBonusAction() {
-        return isBonusAction;
-    }
-
-    public void setBonusAction(boolean bonusAction) {
-        isBonusAction = bonusAction;
     }
 
     @Override

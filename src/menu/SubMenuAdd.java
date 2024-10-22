@@ -25,7 +25,7 @@ public class SubMenuAdd {
 
 
             // Flags
-
+        boolean errorFlag = false;
 
             // Ints
         int menuChoice = 0;
@@ -38,10 +38,19 @@ public class SubMenuAdd {
             Art.subMenuAdd();
 
 
+            if (errorFlag) {
+                System.out.println("You have entered something wrong... Try again please.");
+                errorFlag = false;
+            }
+
+
             try {
                 Art.placer();
                 menuChoice = sc.nextInt();
-                sc.nextLine();
+
+                if (menuChoice < 1 || menuChoice > 3) {
+                    throw new IllegalArgumentException("You have entered something wrong... Try again please.");
+                }
 
                 switch (menuChoice) {
                     case 1: {
@@ -60,16 +69,8 @@ public class SubMenuAdd {
                     }
                 }
             } catch (Exception e) {
-                System.out.print("Something went wrong friend, try from the start...");
-//                running = false;
-//                break;
-            }
-            sc.nextLine();
-
-            if (sc.nextLine().isEmpty()) {
-                running = false;
-            } else {
-                running = true;
+                errorFlag = true;
+                sc.nextLine();
             }
         }
     }
@@ -147,13 +148,21 @@ public class SubMenuAdd {
 
                 String recipeName = "";
 
+
+
                 do {
                     Art.menuRefresh();
+                    if (errorFlag) {
+                        System.out.println("The name of your recipe cannot be empty...");
+                        QOL.setLine(1);;
+                    } else {
+                        errorFlag = false;
+                    }
                     System.out.println("Enter a name for the " + recipeType + " recipe:");
                     Art.placer();
                     recipeName = sc.nextLine();
                     if (recipeName.trim().isEmpty()) {
-                        System.out.println("The name of your recipe cannot be empty...");
+                        errorFlag = true;
                     }
                 } while (recipeName.trim().isEmpty());
 

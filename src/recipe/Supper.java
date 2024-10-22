@@ -8,16 +8,9 @@ public class Supper extends Recipe {
 
     public Supper(String title, List<String> ingredients, String instructions, boolean isLongRest) {
         super(title, ingredients, instructions);
-        this.isLongRest = isLongRest;
+
     }
 
-    public boolean isLongRest() {
-        return isLongRest;
-    }
-
-    public void setLongRest(boolean longRest) {
-        isLongRest = longRest;
-    }
 
     @Override
     public String getType() {

@@ -8,7 +8,7 @@ public abstract class Recipe {
     private String instructions;
 
 
-    // GETTERS
+
     public String getTitle() {
         return title;
     }
@@ -21,7 +21,7 @@ public abstract class Recipe {
         return instructions;
     }
 
-    // SETTERS
+
     public void setTitle(String title) {
         this.title = title;
     }

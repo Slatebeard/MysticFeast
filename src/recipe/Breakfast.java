@@ -7,15 +7,6 @@ public class Breakfast extends Recipe {
 
     public Breakfast(String title, List<String> ingredients, String instructions, boolean isLongrest) {
         super(title, ingredients, instructions);
-        this.isLongrest = isLongrest;
-    }
-
-    public boolean isLongrest() {
-        return isLongrest;
-    }
-
-    public void setLongrest(boolean longrest) {
-        isLongrest = longrest;
     }
 
     @Override
